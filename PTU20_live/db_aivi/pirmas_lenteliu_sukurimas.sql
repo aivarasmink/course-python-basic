@@ -1,0 +1,10 @@
+-- SQLite
+CREATE TABLE clients1 (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+first_name VARCHAR(50),
+last_name VARCHAR(50),
+email VARCHAR(100),
+phone VARCHAR(20)
+);
+
+DROP TABLE clients;

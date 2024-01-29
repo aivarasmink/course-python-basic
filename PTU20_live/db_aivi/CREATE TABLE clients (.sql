@@ -1,0 +1,8 @@
+CREATE TABLE clients (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name VARCHAR(50),
+    last_name VARCHARD(50),
+    email VARCHARD(100)
+    );
+
+ALTER TABLE clients ADD COLUMN address VARCHAR(100);
