@@ -1,0 +1,28 @@
+CREATE TABLE IF NOT EXISTS Product (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name VARCHAR(100) NOT NULL,
+    price INTEGER NOT NULL
+    );
+
+CREATE TABLE IF NOT EXISTS Custumer (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name VARCHAR(50) NOT NULL,
+    surname VARCHAR(50) NOT NULL
+    );
+
+CREATE TABLE IF NOT EXISTS Bill (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    purch_date_time DATETIME NOT NULL,
+    casher_id INTEGER NOT NULL,
+    product_id INTEGER NOT NULL,
+    FOREIGN KEY (casher_id) REFERENCES Custumer(id)
+    );
+
+CREATE TABLE IF NOT EXISTS Bill_line (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    bill_id INTEGER NOT NULL,
+    product_id INTEGER NOT NULL,
+    qountity INTEGER NOT NULL,
+    FOREIGN KEY (bill_id) REFERENCES Bill(id),
+    FOREIGN KEY (product_id) REFERENCES Product(id)
+    );
